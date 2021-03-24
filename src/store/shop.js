@@ -5,25 +5,45 @@ export default {
                 id: 1,
                 title: 'Nike Red',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ex scelerisque risus iaculis vulputate. Duis sit amet vulputate felis, sed viverra purus. Integer lorem ante, egestas eget varius eu, pharetra at metus. ',
-                img: require('../assets/img/1.png')
+                img: require('../assets/img/1.png'),
+                gallery: [
+                    { name: 'Nike boots First', img: require('../assets/img/1.png') },
+                    { name: 'Nike boots Second', img: require('../assets/img/2.png') },
+                    { name: 'Nike boots Third', img: require('../assets/img/3.png') }
+                ]
             },
             {
                 id: 2,
                 title: 'Nike Default',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ex scelerisque risus iaculis vulputate. Duis sit amet vulputate felis, sed viverra purus. Integer lorem ante, egestas eget varius eu, pharetra at metus. ',
-                img: require('../assets/img/4.png')
+                img: require('../assets/img/4.png'),
+                gallery: [
+                    { name: 'Nike boots First', img: require('../assets/img/4.png') },
+                    { name: 'Nike boots Second', img: require('../assets/img/5.png') },
+                    { name: 'Nike boots Third', img: require('../assets/img/6.png') }
+                ]
             },
             {
                 id: 3,
                 title: 'Nike Green',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ex scelerisque risus iaculis vulputate. Duis sit amet vulputate felis, sed viverra purus. Integer lorem ante, egestas eget varius eu, pharetra at metus. ',
-                img: require('../assets/img/7.png')
+                img: require('../assets/img/7.png'),
+                gallery: [
+                    { name: 'Nike boots First', img: require('../assets/img/7.png') },
+                    { name: 'Nike boots Second', img: require('../assets/img/8.png') },
+                    { name: 'Nike boots Third', img: require('../assets/img/9.png') }
+                ]
             },
             {
                 id: 4,
                 title: 'Nike Street',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis ex scelerisque risus iaculis vulputate. Duis sit amet vulputate felis, sed viverra purus. Integer lorem ante, egestas eget varius eu, pharetra at metus. ',
-                img: require('../assets/img/10.png')
+                img: require('../assets/img/10.png'),
+                gallery: [
+                    { name: 'Nike boots First', img: require('../assets/img/10.png') },
+                    { name: 'Nike boots Second', img: require('../assets/img/11.png') },
+                    { name: 'Nike boots Third', img: require('../assets/img/12.png') }
+                ]
             }
         ]
     },
@@ -32,6 +52,9 @@ export default {
     getters: {
         getShopList (state) {
             return state.shopList
+        },
+        getProduct: (state) => (id) => {
+            return state.shopList.find( product => product.id == id)
         }
     },
 }
